@@ -14,51 +14,22 @@
 
 char	*x_diese(struct s_stru *s, char *s1)
 {
-	char *s2;
-	int i;
-	int k;
+	char	*s2;
+	int		i;
+	int		k;
 
 	i = 0;
 	k = 0;
 	if (!(s2 = ft_strnew(sizeof(s2) * s->preci + 4)))
-			return (0);
+		return (0);
 	s2[0] = '0';
 	s2[1] = 'x';
 	return (s2);
 }
 
-char	*x_changeformat(struct s_stru *s)
+void	x_conv2(struct s_stru *s, char *value)
 {
-	char *s1;
-	char *s2;
-	int i;
-	int k;
-
-	i = 0;
-	k = 0;
-	if (!(s1 = ft_strnew(sizeof(s1) * ((ft_strlen(s->conv) + ft_strlen(s->format) + 1)))))
-		return (0);
-	if (!(s2 = ft_strnew(sizeof(s2) * ((ft_strlen(s->conv) + ft_strlen(s->format) + 1)))))
-	{
-		ft_strdel(&s->conv);
-		return (0);
-	}
-	while (i < s->beg)
-	{
-		s1[i] = s->format[i];
-		i++;
-	}
-	while (s->format[s->end])
-		s2[k++] = s->format[s->end++];
-	s1 = ft_strjoin(ft_strjoin(s1, s->conv), s2);
-	s->format = s1;
-	ft_strdel(&s2);
-	return (s1);
-}
-
-void 	x_conv2(struct s_stru *s, char *value)
-{
-	int i;
+	int	i;
 
 	i = 0;
 	if (s->upx != 0)
@@ -85,16 +56,16 @@ void 	x_conv2(struct s_stru *s, char *value)
 	initparcer(&(*s));
 }
 
-int 	x_conv(struct s_stru *s, va_list ap)
+int		x_conv(struct s_stru *s, va_list ap)
 {
-	int z;
-	char *value;
+	int		z;
+	char	*value;
 
 	value = NULL;
 	z = 0;
 	ft_putstr(s->print);
 	s->conv = x_modif(s, ap, &z);
-	if (s->conv[0] == '0' )
+	if (s->conv[0] == '0')
 		z = 1;
 	s->conv = x_preci(s, s->conv);
 	value = s->conv;

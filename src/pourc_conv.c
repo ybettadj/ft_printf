@@ -12,7 +12,7 @@
 
 #include "../include/printf.h"
 
-void 	pourc2_width3(struct s_stru *s, char *s1, char *s2)
+void	pourc2_width3(struct s_stru *s, char *s1, char *s2)
 {
 	int i;
 	int k;
@@ -26,7 +26,7 @@ void 	pourc2_width3(struct s_stru *s, char *s1, char *s2)
 	s2[k] = '\0';
 }
 
-void 	pourc2_width2(struct s_stru *s, char *s1, char *s2)
+void	pourc2_width2(struct s_stru *s, char *s1, char *s2)
 {
 	int i;
 	int k;
@@ -55,9 +55,9 @@ void 	pourc2_width2(struct s_stru *s, char *s1, char *s2)
 
 char	*pourc2_width(struct s_stru *s, char *s1)
 {
-	char *s2;
-	int i;
-	int k;
+	char	*s2;
+	int		i;
+	int		k;
 
 	i = 0;
 	k = 0;
@@ -79,10 +79,10 @@ char	*pourc2_width(struct s_stru *s, char *s1)
 
 char	*pourc_changeformat(struct s_stru *s)
 {
-	char *s1;
-	char *s2;
-	int i;
-	int k;
+	char	*s1;
+	char	*s2;
+	int		i;
+	int		k;
 
 	i = 0;
 	k = 0;
@@ -103,7 +103,7 @@ char	*pourc_changeformat(struct s_stru *s)
 	return (s1);
 }
 
-int 	pourc_conv(struct s_stru *s, va_list ap)
+int		pourc_conv(struct s_stru *s, va_list ap)
 {
 	char *value;
 

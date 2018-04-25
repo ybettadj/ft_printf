@@ -25,16 +25,16 @@ void	x_width2(struct s_stru *s, char *s1, char *s2, int z)
 		s2[1] = 'x';
 		k = 2;
 		while (s1[i])
-		s2[k++] = s1[i++];
+			s2[k++] = s1[i++];
 		while (k < s->width)
-		s2[k++] = ' ';
+			s2[k++] = ' ';
 	}
-	else 
+	else
 	{
 		while (s1[i])
-		s2[k++] = s1[i++];
+			s2[k++] = s1[i++];
 		while (k < s->width)
-		s2[k++] = ' ';
+			s2[k++] = ' ';
 	}
 	s2[k] = '\0';
 }
@@ -52,16 +52,16 @@ void	x_width3(struct s_stru *s, char *s1, char *s2, int z)
 		s2[1] = 'x';
 		k = 2;
 		while (k < s->width - ft_strlen(s1))
-		s2[k++] = '0';
+			s2[k++] = '0';
 		while (s1[i])
-		s2[k++] = s1[i++];
+			s2[k++] = s1[i++];
 	}
 	else
 	{
 		while (k < s->width - ft_strlen(s1))
-		s2[k++] = '0';
+			s2[k++] = '0';
 		while (s1[i])
-		s2[k++] = s1[i++];
+			s2[k++] = s1[i++];
 	}
 	s2[k] = '\0';
 }
@@ -112,11 +112,11 @@ char	*x_width(struct s_stru *s, char *s1, int z)
 	if (s->width == 0 || (s->width != 0 && s->width <= ft_strlen(s1)))
 	{
 		if (s->diese != 0 && z != 1)
-			{
-				s2[0] = '0';
-				s2[1] = 'x';
-			}
-		tmp = ft_strjoin(s2,s1);
+		{
+			s2[0] = '0';
+			s2[1] = 'x';
+		}
+		tmp = ft_strjoin(s2, s1);
 		ft_strdel(&s2);
 		return (tmp);
 	}

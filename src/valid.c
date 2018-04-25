@@ -22,7 +22,7 @@ void		valid_larg(struct s_stru *s)
 		s->format[s->end] != 's' && s->format[s->end] != 'S' &&
 		s->format[s->end] != 'p' && s->format[s->end] != 'd' &&
 		s->format[s->end] != 'D' && s->format[s->end] != 'i' &&
-		s->format[s->end] != 'o' && s->format[s->end] != 'O' && 
+		s->format[s->end] != 'o' && s->format[s->end] != 'O' &&
 		s->format[s->end] != 'u' && s->format[s->end] != 'U' &&
 		s->format[s->end] != 'x' && s->format[s->end] != 'X' &&
 		s->format[s->end] != 'c' && s->format[s->end] != 'C' &&

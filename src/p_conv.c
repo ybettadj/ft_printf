@@ -12,7 +12,7 @@
 
 #include "../include/printf.h"
 
-void 	p_conv2(struct s_stru *s, char *value, char *s1)
+void	p_conv2(struct s_stru *s, char *value, char *s1)
 {
 	value = s->conv;
 	s->conv = s1;
@@ -32,10 +32,10 @@ void 	p_conv2(struct s_stru *s, char *value, char *s1)
 	ft_strdel(&value);
 }
 
-void 	p_conv3(struct s_stru *s, char *value, char *s1)
+void	p_conv3(struct s_stru *s, char *value, char *s1)
 {
 	value = s->conv;
-	s->conv = ft_strjoin(s1,value);
+	s->conv = ft_strjoin(s1, value);
 	ft_strdel(&value);
 	if (s->width < 0)
 		s->width = 0;
@@ -52,10 +52,10 @@ void 	p_conv3(struct s_stru *s, char *value, char *s1)
 	ft_strdel(&value);
 }
 
-void 	p_conv4(struct s_stru *s, char *value, char *s1)
+void	p_conv4(struct s_stru *s, char *value, char *s1)
 {
 	value = s->conv;
-	s->conv = ft_strjoin(s1,value);
+	s->conv = ft_strjoin(s1, value);
 	ft_strdel(&value);
 	if (s->width < 0)
 		s->width = 0;
@@ -73,13 +73,14 @@ void 	p_conv4(struct s_stru *s, char *value, char *s1)
 	ft_strdel(&value);
 }
 
-int 				p_conv(struct s_stru *s, va_list ap)
+int		p_conv(struct s_stru *s, va_list ap)
 {
-	char *s1;
-	char *value;
- 
-	value = NULL; 
-	intptr_t ptr = (intptr_t)va_arg(ap, void *);
+	char		*s1;
+	char		*value;
+	intptr_t	ptr;
+
+	value = NULL;
+	ptr = (intptr_t)va_arg(ap, void *);
 	s->conv = ft_itoa_base_p(&ptr, 16);
 	s1 = "0x";
 	s->conv = x_preci(s, s->conv);

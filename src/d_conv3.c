@@ -60,26 +60,6 @@ char	*d_preci(struct s_stru *s, char *s1)
 	return (s1);
 }
 
-void	d_width2(struct s_stru *s, char *s1, char *s2, int *neg)
-{
-	int i;
-	int k;
-
-	k = 0;
-	i = 0;
-	if (*neg != 0)
-	{
-		s1 = negdesac(&(*s));
-		s->width++;
-		*neg = 0;
-	}
-	while (s1[i])
-		s2[k++] = s1[i++];
-	while (k < s->width)
-		s2[k++] = ' ';
-	s2[k] = '\0';
-}
-
 void	d_width3(struct s_stru *s, char *s1, char *s2)
 {
 	int i;
@@ -94,9 +74,30 @@ void	d_width3(struct s_stru *s, char *s1, char *s2)
 	s2[k] = '\0';
 }
 
-void	d_width4(struct s_stru *s, char **s1, int *neg)
+void	d_width5(struct s_stru *s, char *s1, char *s2)
 {
-	*s1 = negdesac(&(*s));
-	s->width++;
-	*neg = 0;
+	int i;
+	int k;
+
+	i = 0;
+	k = 0;
+	while (k < s->width - ft_strlen(s1))
+		s2[k++] = ' ';
+	while (s1[i])
+		s2[k++] = s1[i++];
+	s2[k] = '\0';
+}
+
+void	d_width6(struct s_stru *s, char *s1, char *s2)
+{
+	int i;
+	int k;
+
+	k = 0;
+	i = 0;
+	while (s1[i])
+		s2[k++] = s1[i++];
+	while (k < s->width)
+		s2[k++] = ' ';
+	s2[k] = '\0';
 }

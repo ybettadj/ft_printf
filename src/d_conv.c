@@ -12,45 +12,45 @@
 
 #include "../include/printf.h"
 
-void	d_width5(struct s_stru *s, char *s1, char *s2)
-{
-	int i;
-	int k;
-
-	i = 0;
-	k = 0;
-	while (k < s->width - ft_strlen(s1))
-		s2[k++] = ' ';
-	while (s1[i])
-		s2[k++] = s1[i++];
-	s2[k] = '\0';
-}
-
-char	*d_width(struct s_stru *s, char *s1, int *neg, int *plus)
+char		*d_width_help(struct s_stru *s, char *s1, int *neg, int *plus)
 {
 	char	*s2;
 
 	if (!(s2 = ft_strnew(sizeof(s2) * (s->width + 2))))
 		return (0);
-	if (s->width != 0 && s->width > ft_strlen(s1))
+	if (s->zero != 0 && s->preci == 0 && s->less == 0)
+		d_width3(&(*s), &(*s1), &(*s2));
+	else
 	{
-		if (s->less != 0)
-			d_width2(&(*s), &(*s1), &(*s2), neg);
-		else if (s->zero != 0 && s->preci == 0 && s->less == 0)
-			d_width3(&(*s), &(*s1), &(*s2));
-		else
+		if (*neg != 0)
 		{
-			if (*neg != 0)
-				d_width4(&(*s), &s1, neg);
-			else
-				s1 = plus_d(&(*s), *neg, &(*plus));
-			d_width5(&(*s), &(*s1), &(*s2));
+			s1 = negdesac(&(*s));
+			s->width++;
+			*neg = 0;
 		}
-		ft_strdel(&s->conv);
-		return (s2);
+		else
+			s1 = plus_d(&(*s), *neg, &(*plus));
+		d_width5(&(*s), &(*s1), &(*s2));
 	}
-	ft_strdel(&s2);
-	return (s1);
+	ft_strdel(&s1);
+	return (s2);
+}
+
+char		*d_width(struct s_stru *s, char *s1, int *neg, int *plus)
+{
+	char	*s2;
+
+	if (!(s2 = ft_strnew(sizeof(s2) * (s->width + 2))))
+		return (0);
+	if (*neg != 0)
+	{
+		s1 = negdesac(&(*s));
+		s->width++;
+		*neg = 0;
+	}
+	d_width6(&(*s), &(*s1), &(*s2));
+	ft_strdel(&s1);
+	return (s2);
 }
 
 void		d_convhelp1(struct s_stru *s, int *neg, int *plus, va_list ap)
@@ -72,7 +72,13 @@ void		d_convhelp1(struct s_stru *s, int *neg, int *plus, va_list ap)
 	if (s->space != 0 && *neg == 0 && s->plus == 0 && s->width > 0)
 		s->width = s->width - 1;
 	s->conv = d_preci(s, s->conv);
-	s->conv = d_width(&(*s), s->conv, &(*neg), &(*plus));
+	if (s->width != 0 && s->width > ft_strlen(s->conv))
+	{
+		if (s->less == 0)
+			s->conv = d_width_help(&(*s), s->conv, &(*neg), &(*plus));
+		else
+			s->conv = d_width(&(*s), s->conv, &(*neg), &(*plus));
+	}
 }
 
 void		d_convhelp2(struct s_stru *s, int *neg, int *plus)
@@ -85,12 +91,12 @@ void		d_convhelp2(struct s_stru *s, int *neg, int *plus)
 		s->conv = negdesac(&(*s));
 }
 
-int		d_conv(struct s_stru *s, va_list ap)
+int			d_conv(struct s_stru *s, va_list ap)
 {
 	int		neg;
 	int		plus;
-	char 	*value;
- 
+	char	*value;
+
 	neg = 0;
 	plus = 0;
 	value = NULL;

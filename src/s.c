@@ -17,9 +17,7 @@ char	*s_preci(struct s_stru *s, char *s1)
 	char *s2;
 
 	if (s->ppp == 0 || (s->preci != 0 && s->preci >= ft_strlen(s1)))
-	{
-		return(s1);
-	}
+		return (s1);
 	if (s->ppp != 0 && s->preci < ft_strlen(s1))
 	{
 		if (!(s2 = ft_strnew(sizeof(s2) * (s->width + 2))))
@@ -30,7 +28,7 @@ char	*s_preci(struct s_stru *s, char *s1)
 	return (s1);
 }
 
-void 	s_width3(struct s_stru *s, char *s1, char *s2)
+void	s_width3(struct s_stru *s, char *s1, char *s2)
 {
 	int i;
 	int k;
@@ -44,7 +42,7 @@ void 	s_width3(struct s_stru *s, char *s1, char *s2)
 	s2[k] = '\0';
 }
 
-void 	s_width2(struct s_stru *s, char *s1, char *s2)
+void	s_width2(struct s_stru *s, char *s1, char *s2)
 {
 	int i;
 	int k;
@@ -87,10 +85,10 @@ char	*s_width(struct s_stru *s, char *s1)
 	return (s1);
 }
 
-int 	s_conv(struct s_stru *s, va_list ap)
+int		s_conv(struct s_stru *s, va_list ap)
 {
-	char *value;
-	int i;
+	char	*value;
+	int		i;
 
 	value = NULL;
 	i = 0;

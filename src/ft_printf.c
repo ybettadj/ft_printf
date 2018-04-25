@@ -73,7 +73,7 @@ void		after_pourc(struct s_stru *s, va_list ap)
 	}
 }
 
-int				ft_printf(const char *format, ...)
+int			ft_printf(const char *format, ...)
 {
 	va_list		ap;
 	t_stru		s;
@@ -98,49 +98,3 @@ int				ft_printf(const char *format, ...)
 	ft_strdel(&s.format);
 	return (s.retour);
 }
-
-
- /*int			main()
- {
- 	intmax_t i;
- 	long int l;
- 	char *s;
- 	int p = 10;
- 	int x = 98;
-
- 	s = "Bonjour";
- 
-	  ft_printf("\n");
-	  ft_printf("%%\n");
-	  ft_printf("%-50.4d 1 \n", -42);
-	  printf("%-50.4d 2 \n", -42);
-	  ft_printf("%d%d\n", 42, 41);
-	  ft_printf("%d%d%d\n", 42, 43, 44);
-	  ft_printf("%ld\n", 2147483647);
-	  ft_printf("%lld\n", 9223372036854775807);
-	  ft_printf("%x\n", 505);
-	  ft_printf("%X\n", 505);
-	  ft_printf("%p\n", &ft_printf);
-	  ft_printf("%20.15d\n", 54321);
-	  ft_printf("%-10d\n", 3);
-	  ft_printf("% d\n", 3);
-	  ft_printf("%+d\n", 3);
-	  ft_printf("%010d\n", 1);
-	  ft_printf("%hhd\n", 0);
-	  ft_printf("%jd\n", 9223372036854775807);
-	  ft_printf("%zd\n", 4294967295);
-	  ft_printf("%\n");
-	  ft_printf("%U\n", 4294967295);
-	  ft_printf("%u\n", 4294967295);
-	  ft_printf("%o\n", 40);
-	  ft_printf("%%#08x\n", 42);
-	  ft_printf("%x\n", 1000);
-	  ft_printf("%#X\n", 1000);
-	  ft_printf("%s\n", NULL);
-	  ft_printf("%S\n", L"ݗݜशব");
-	  ft_printf("%s%s\n", "test", "test");
-	  ft_printf("%s%s%s\n", "test", "test", "test");
-  	ft_printf("1 ; %15.4d\n", -42);
-  	printf("2 ; %15.4d\n", -42);
- 	return (0);
- }*/

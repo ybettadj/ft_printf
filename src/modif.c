@@ -33,8 +33,8 @@ char		*ft_itoa2(intmax_t n)
 {
 	intmax_t		i;
 	intmax_t		y;
-	int		p;
-	char	*tab;
+	int				p;
+	char			*tab;
 
 	i = 0;
 	y = 0;
@@ -58,8 +58,7 @@ char		*ft_itoa2(intmax_t n)
 	return (tab);
 }
 
-
-void	modif2(struct s_stru *s, va_list ap)
+void		modif2(struct s_stru *s, va_list ap)
 {
 	if (s->hh != 0)
 		s->numconv = (char)va_arg(ap, intmax_t);
@@ -77,7 +76,7 @@ void	modif2(struct s_stru *s, va_list ap)
 		s->numconv = (int)va_arg(ap, intmax_t);
 }
 
-void	modifunsigned(struct s_stru *s, va_list ap)
+void		modifunsigned(struct s_stru *s, va_list ap)
 {
 	if (s->hh != 0)
 		s->numconv2 = (unsigned char)va_arg(ap, uintmax_t);
@@ -95,7 +94,7 @@ void	modifunsigned(struct s_stru *s, va_list ap)
 		s->numconv2 = (unsigned int)va_arg(ap, uintmax_t);
 }
 
-char	*modif(struct s_stru *s, va_list ap)
+char		*modif(struct s_stru *s, va_list ap)
 {
 	char *str;
 

@@ -39,7 +39,7 @@ char	*x_preci(struct s_stru *s, char *s1)
 	char *s2;
 
 	if (!(s2 = ft_strnew(sizeof(s2) * s->preci + 4)))
-			return (0);
+		return (0);
 	if (s1[0] == '0' && s->preci == 0 && s->ppp == 1)
 	{
 		s2[0] = '\0';
@@ -49,7 +49,7 @@ char	*x_preci(struct s_stru *s, char *s1)
 	if (s->preci == 0 || (s->preci != 0 && s->preci <= ft_strlen(s1)))
 	{
 		ft_strdel(&s2);
-		return(s1);
+		return (s1);
 	}
 	if (s->preci != 0 && s->preci > ft_strlen(s1))
 	{

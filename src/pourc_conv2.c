@@ -17,11 +17,11 @@ char	*pourc_preci(struct s_stru *s, char *s1)
 	char *s2;
 
 	if (!(s2 = ft_strnew(sizeof(s2) * ft_strlen(s1) + 1)))
-			return (0);
+		return (0);
 	if (s->preci == 0 || (s->preci != 0 && s->preci >= ft_strlen(s1)))
 	{
 		ft_strdel(&s2);
-		return(s1);
+		return (s1);
 	}
 	if (s->preci != 0 && s->preci < ft_strlen(s1))
 	{

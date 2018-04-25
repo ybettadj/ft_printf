@@ -12,7 +12,7 @@
 
 #include "../include/printf.h"
 
-void 	u_width4(struct s_stru *s, char *s1, char *s2)
+void	u_width4(struct s_stru *s, char *s1, char *s2)
 {
 	int i;
 	int k;
@@ -26,7 +26,7 @@ void 	u_width4(struct s_stru *s, char *s1, char *s2)
 	s2[k] = '\0';
 }
 
-void 	u_width3(struct s_stru *s, char *s1, char *s2)
+void	u_width3(struct s_stru *s, char *s1, char *s2)
 {
 	int i;
 	int k;
@@ -52,7 +52,7 @@ void 	u_width3(struct s_stru *s, char *s1, char *s2)
 	s2[k] = '\0';
 }
 
-void 	u_width2(struct s_stru *s, char *s1, char *s2)
+void	u_width2(struct s_stru *s, char *s1, char *s2)
 {
 	int i;
 	int k;
@@ -92,11 +92,10 @@ char	*u_width(struct s_stru *s, char *s1)
 	return (s1);
 }
 
-
-int 	u_conv(struct s_stru *s, va_list ap)
+int		u_conv(struct s_stru *s, va_list ap)
 {
-	int z;
-	char *value;
+	int		z;
+	char	*value;
 
 	value = NULL;
 	z = 0;

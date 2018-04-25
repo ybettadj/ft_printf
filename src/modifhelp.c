@@ -46,7 +46,7 @@ char			*ft_itoa_base(uintmax_t n, uintmax_t base)
 	return (str);
 }
 
-char	*x_modif(struct s_stru *s, va_list ap, int *z)
+char			*x_modif(struct s_stru *s, va_list ap, int *z)
 {
 	char *str;
 
@@ -57,7 +57,7 @@ char	*x_modif(struct s_stru *s, va_list ap, int *z)
 	return (str);
 }
 
-char	*u_modif(struct s_stru *s, va_list ap)
+char			*u_modif(struct s_stru *s, va_list ap)
 {
 	char *str;
 
@@ -66,7 +66,7 @@ char	*u_modif(struct s_stru *s, va_list ap)
 	return (str);
 }
 
-char	*o_modif(struct s_stru *s, va_list ap)
+char			*o_modif(struct s_stru *s, va_list ap)
 {
 	char *str;
 

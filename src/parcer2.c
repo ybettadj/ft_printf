@@ -46,7 +46,6 @@ void	parcerflag2(struct s_stru *s)
 	}
 }
 
-
 void	parcerconv2(struct s_stru *s)
 {
 	if (s->format[s->end] == 'i')

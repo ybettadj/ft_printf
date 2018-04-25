@@ -12,7 +12,7 @@
 
 #include "../include/printf.h"
 
-void 	initstru2(struct s_stru *s)
+void				initstru2(struct s_stru *s)
 {
 	s->ups = 0;
 	s->p = 0;
@@ -33,9 +33,9 @@ void 	initstru2(struct s_stru *s)
 	s->q = 0;
 }
 
-struct s_stru		initstru(const char *format)
+struct	s_stru		initstru(const char *format)
 {
-	struct	s_stru s;
+	struct s_stru s;
 
 	s.print = ft_strnew(ft_strlen(format));
 	s.numconv = 0;
@@ -61,7 +61,7 @@ struct s_stru		initstru(const char *format)
 	return (s);
 }
 
-void		initparcer2(struct s_stru *s)
+void				initparcer2(struct s_stru *s)
 {
 	s->i = 0;
 	s->o = 0;
@@ -76,7 +76,7 @@ void		initparcer2(struct s_stru *s)
 	s->ppp = 0;
 }
 
-void		initparcer(struct s_stru *s)
+void				initparcer(struct s_stru *s)
 {
 	s->numconv = 0;
 	s->numconv2 = 0;
@@ -101,7 +101,7 @@ void		initparcer(struct s_stru *s)
 	initparcer2(&(*s));
 }
 
-void		initmodif(struct s_stru *s)
+void				initmodif(struct s_stru *s)
 {
 	s->hh = 0;
 	s->h = 0;

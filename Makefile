@@ -14,8 +14,6 @@ CC = gcc
 
 NAME = libftprintf.a
 
-NAME2 = ft_printf
-
 LIBFT = ./libft/libft.a
 
 INCLUDE = ./include/ft_printf.h
@@ -34,19 +32,18 @@ FLAGS = -Wall -Werror -Wextra
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	make -C ./libft/
-	#$(CC) -o $(NAME2) $(FLAGS) $(LIBFT) $(OBJ)
-	$(CC) -c $(SRC) -I $(INCLUDE)
-	cp $(LIBFT) $(NAME)
-	ar rcs $(NAME) $(OBJ)
+		make -C ./libft/
+		$(CC) -c $(SRC) -I $(INCLUDE)
+		cp $(LIBFT) $(NAME)
+		ar rcs $(NAME) $(OBJ)
 
 clean :
-	make clean -C ./libft
-	rm -rf $(OBJ)
+		make clean -C ./libft
+		rm -rf $(OBJ)
+		rm -rf *.o
 
 fclean : clean
-	make fclean -C ./libft
-	rm -rf $(NAME)
-	rm -rf *.o
+		make fclean -C ./libft
+		rm -rf $(NAME)
 
 re : fclean all

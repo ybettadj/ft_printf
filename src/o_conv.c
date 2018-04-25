@@ -12,9 +12,10 @@
 
 #include "../include/printf.h"
 
-void 	o_conv2(struct s_stru *s, va_list ap)
+void	o_conv2(struct s_stru *s, va_list ap)
 {
 	int z;
+
 	z = 0;
 	ft_putstr(s->print);
 	s->conv = o_modif(s, ap);
@@ -22,12 +23,12 @@ void 	o_conv2(struct s_stru *s, va_list ap)
 	if (s->conv[0] == '0')
 		z = 1;
 	if (s->diese != 0 && z != 1)
-		s->conv = o_diese(&(*s),s->conv);
+		s->conv = o_diese(&(*s), s->conv);
 }
 
-int 	o_conv(struct s_stru *s, va_list ap)
+int		o_conv(struct s_stru *s, va_list ap)
 {
-	char 	*value;
+	char	*value;
 
 	value = NULL;
 	o_conv2(&(*s), ap);

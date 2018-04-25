@@ -14,15 +14,15 @@
 
 char	*o_diese(struct s_stru *s, char *s1)
 {
-	char *s2;
-	int i;
-	int k;
+	char	*s2;
+	int		i;
+	int		k;
 
 	i = 0;
 	k = 0;
 	if (!(s2 = ft_strnew(sizeof(s2) * s->preci + 4)))
-			return (0);
-	if (s->conv[0] == '0' && s->conv[1] == '\0' )
+		return (0);
+	if (s->conv[0] == '0' && s->conv[1] == '\0')
 		s2 = ft_strjoin(s2, s1);
 	else
 	{
@@ -33,7 +33,7 @@ char	*o_diese(struct s_stru *s, char *s1)
 	return (s2);
 }
 
-void 	o_width2(struct s_stru *s, char *s1, char *s2)
+void	o_width2(struct s_stru *s, char *s1, char *s2)
 {
 	int i;
 	int k;
@@ -47,7 +47,7 @@ void 	o_width2(struct s_stru *s, char *s1, char *s2)
 	s2[k] = '\0';
 }
 
-void 	o_width3(struct s_stru *s, char *s1, char *s2)
+void	o_width3(struct s_stru *s, char *s1, char *s2)
 {
 	int i;
 	int k;
@@ -61,7 +61,7 @@ void 	o_width3(struct s_stru *s, char *s1, char *s2)
 	s2[k] = '\0';
 }
 
-void 	o_width4(struct s_stru *s, char *s1, char *s2)
+void	o_width4(struct s_stru *s, char *s1, char *s2)
 {
 	int i;
 	int k;
