@@ -119,7 +119,7 @@ int		pourc_conv(struct s_stru *s, va_list ap)
 	ft_strdel(&value);
 	value = ft_strdup(s->format);
 	ft_strdel(&s->format);
-	s->format = ft_strsub(value, s->end, ft_strlen(value));
+	s->format = ft_strsub(value, s->end, ft_strlen(value) - s->end);
 	ft_strdel(&value);
 	ft_strdel(&s->print);
 	s->print = ft_strnew(ft_strlen(s->format) + 3);

@@ -107,7 +107,7 @@ int			d_conv(struct s_stru *s, va_list ap)
 	ft_strdel(&value);
 	ft_putstr(s->conv);
 	value = s->format;
-	s->format = ft_strsub(value, s->end, ft_strlen(value));
+	s->format = ft_strsub(value, s->end, ft_strlen(value) - s->end);
 	ft_strdel(&value);
 	value = s->print;
 	s->print = ft_strnew(ft_strlen(s->format) + 3);

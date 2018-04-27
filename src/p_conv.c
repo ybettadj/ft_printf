@@ -25,7 +25,7 @@ void	p_conv2(struct s_stru *s, char *value, char *s1)
 	s->retour = s->retour + ft_strlen(value);
 	ft_strdel(&value);
 	value = s->format;
-	s->format = ft_strsub(s->format, s->end, ft_strlen(s->format));
+	s->format = ft_strsub(s->format, s->end, ft_strlen(s->format) - s->end);
 	ft_strdel(&value);
 	value = s->print;
 	s->print = ft_strnew(ft_strlen(s->format) + 3);
@@ -45,7 +45,7 @@ void	p_conv3(struct s_stru *s, char *value, char *s1)
 	s->retour = s->retour + ft_strlen(value);
 	ft_strdel(&value);
 	value = s->format;
-	s->format = ft_strsub(s->format, s->end, ft_strlen(s->format));
+	s->format = ft_strsub(s->format, s->end, ft_strlen(s->format) - s->end);
 	ft_strdel(&value);
 	value = s->print;
 	s->print = ft_strnew(ft_strlen(s->format) + 3);
@@ -66,7 +66,7 @@ void	p_conv4(struct s_stru *s, char *value, char *s1)
 	s->retour = s->retour + ft_strlen(value);
 	ft_strdel(&value);
 	value = s->format;
-	s->format = ft_strsub(s->format, s->end, ft_strlen(s->format));
+	s->format = ft_strsub(s->format, s->end, ft_strlen(s->format) - s->end);
 	ft_strdel(&value);
 	value = s->print;
 	s->print = ft_strnew(ft_strlen(s->format) + 3);

@@ -81,7 +81,7 @@ void		parcerpreci2(struct s_stru *s, int *x)
 	int		k;
 
 	k = 0;
-	str = ft_strnew(*x + 1);
+	str = ft_strnew(ft_strlen(s->format));
 	while (s->format[s->end] && (s->format[s->end] == '1' ||
 		s->format[s->end] == '2' || s->format[s->end] == '3' ||
 		s->format[s->end] == '4' || s->format[s->end] == '5' ||

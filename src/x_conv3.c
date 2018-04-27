@@ -45,7 +45,7 @@ void	x_conv2(struct s_stru *s, char *value)
 	s->retour = s->retour + ft_strlen(value);
 	ft_strdel(&value);
 	value = s->format;
-	s->format = ft_strsub(value, s->end, ft_strlen(value));
+	s->format = ft_strsub(value, s->end, ft_strlen(value) - s->end);
 	ft_strdel(&value);
 	value = s->print;
 	s->print = ft_strnew(ft_strlen(s->format) + 3);

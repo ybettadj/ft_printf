@@ -103,7 +103,7 @@ int		s_conv(struct s_stru *s, va_list ap)
 	s->retour = s->retour + ft_strlen(value);
 	ft_strdel(&value);
 	value = s->format;
-	s->format = ft_strsub(s->format, s->end, ft_strlen(s->format));
+	s->format = ft_strsub(s->format, s->end, ft_strlen(s->format) - s->end);
 	ft_strdel(&value);
 	value = s->print;
 	s->print = ft_strnew(ft_strlen(s->format) + 3);
