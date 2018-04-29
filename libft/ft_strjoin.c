@@ -30,10 +30,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!tab)
 		return (NULL);
 	total = 0;
-	while (s1[total] != '\0')
+	while (total < string1)
 		tab[i++] = s1[total++];
 	total = 0;
-	while (s2[total] != '\0')
+	while (total < string2)
 		tab[i++] = s2[total++];
 	tab[i] = '\0';
 	return (tab);

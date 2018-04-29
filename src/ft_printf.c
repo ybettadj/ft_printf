@@ -98,3 +98,23 @@ int			ft_printf(const char *format, ...)
 	ft_strdel(&s.format);
 	return (s.retour);
 }
+/*
+int main(int argc, char const *argv[])
+{
+	printf("%-.34s\n", "You will die before this tests ends.");
+	ft_printf("%-.34s\n", "You will die before this tests ends.");
+	printf("%10.25s\n", "");
+	printf("\n");
+	ft_printf("%10.25s\n", "");
+	printf("\n");
+	printf("%10.25s\n", "Beer in mind.");
+	printf("\n");
+	ft_printf("%10.25s\n", "Beer in mind.");
+	printf("\n");
+	printf("%10.25s\n", "Don't do this.");
+	ft_printf("%10.25s\n", "Don't do this.");
+	printf("%#42x\n", 2046017833);
+	ft_printf("%#42x\n", 2046017833);
+	return 0;
+}
+*/

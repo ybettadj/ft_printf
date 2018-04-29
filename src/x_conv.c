@@ -70,21 +70,29 @@ void	x_width4(struct s_stru *s, char *s1, char *s2, int z)
 {
 	int i;
 	int k;
+	int x;
 
 	i = 0;
 	k = 0;
+	x = s->width - ft_strlen(s1) - 2;
 	if (s->diese != 0 && z != 1)
 	{
-		while (k < s->width - ft_strlen(s1) - 2)
-			s2[k++] = ' ';
+		if (x > 0)
+		{
+			while (k < s->width - ft_strlen(s1) - 2)
+				s2[k++] = ' ';
+		}
 		s2[k] = '0';
 		s2[k + 1] = 'x';
 		k = k + 2;
 	}
 	else
 	{
-		while (k < s->width - ft_strlen(s1))
-			s2[k++] = ' ';
+		if (s->width > ft_strlen(s1))
+		{
+			while (k < s->width - ft_strlen(s1))
+				s2[k++] = ' ';
+		}
 	}
 	while (s1[i])
 		s2[k++] = s1[i++];

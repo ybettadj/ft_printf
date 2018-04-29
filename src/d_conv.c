@@ -55,6 +55,9 @@ char		*d_width(struct s_stru *s, char *s1, int *neg, int *plus)
 
 void		d_convhelp1(struct s_stru *s, int *neg, int *plus, va_list ap)
 {
+	int mark;
+
+	mark = 0;
 	ft_putstr(s->print);
 	s->conv = modif(s, ap);
 	if (s->conv[0] == '-')
@@ -63,6 +66,7 @@ void		d_convhelp1(struct s_stru *s, int *neg, int *plus, va_list ap)
 		*neg += 1;
 		if (s->width > 0)
 			s->width--;
+		s->mark++;
 	}
 	if (*neg == 0 && s->plus != 0)
 	{
@@ -83,9 +87,9 @@ void		d_convhelp1(struct s_stru *s, int *neg, int *plus, va_list ap)
 
 void		d_convhelp2(struct s_stru *s, int *neg, int *plus)
 {
-	if (s->space != 0 && *neg == 0 && s->plus == 0)
+	if (s->space != 0 && s->mark == 0 && s->plus == 0)
 		s->conv = d_space(&(*s));
-	if (*plus == 0)
+	if (*plus == 0 && s->mark == 0)
 		s->conv = plus_d(&(*s), *neg, &(*plus));
 	if (*neg != 0)
 		s->conv = negdesac(&(*s));

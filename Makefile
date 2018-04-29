@@ -13,6 +13,7 @@
 CC = gcc
 
 NAME = libftprintf.a
+NAME2 = ft_printf
 
 LIBFT = ./libft/libft.a
 
@@ -33,6 +34,7 @@ all : $(NAME)
 
 $(NAME): $(OBJ)
 		make -C ./libft/
+		#$(CC) -o $(NAME2) $(FLAGS) $(LIBFT) $(OBJ)
 		$(CC) -c $(SRC) -I $(INCLUDE)
 		cp $(LIBFT) $(NAME)
 		ar rcs $(NAME) $(OBJ)

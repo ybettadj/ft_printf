@@ -24,21 +24,19 @@ void	x_preci2(struct s_stru *s, char *s1, char *s2)
 		s2[i] = '0';
 		i++;
 	}
-	while (s->conv[k])
+	while (k < ft_strlen(s->conv))
 	{
 		s2[i] = s->conv[k];
 		i++;
 		k++;
 	}
-	s2[i] = '\0';
 	ft_strdel(&s->conv);
 }
 
 char	*x_preci(struct s_stru *s, char *s1)
 {
 	char *s2;
-
-	if (!(s2 = ft_strnew(sizeof(s2) * s->preci + 4)))
+	if (!(s2 = ft_strnew(sizeof(s2) * s->preci + 8)))
 		return (0);
 	if (s1[0] == '0' && s->preci == 0 && s->ppp == 1)
 	{

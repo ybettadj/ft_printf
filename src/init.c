@@ -31,6 +31,7 @@ void				initstru2(struct s_stru *s)
 	s->valid = 0;
 	s->ppp = 0;
 	s->q = 0;
+	s->mark = 0;
 }
 
 struct	s_stru		initstru(const char *format)
@@ -74,6 +75,7 @@ void				initparcer2(struct s_stru *s)
 	s->upc = 0;
 	s->pourc = 0;
 	s->ppp = 0;
+	s->mark = 0;
 }
 
 void				initparcer(struct s_stru *s)
